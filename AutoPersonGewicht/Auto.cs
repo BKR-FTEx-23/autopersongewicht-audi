@@ -10,38 +10,68 @@ namespace AutoPersonGewicht
         private double gesamtgewicht;
         private double fahrzeuggewicht;
         private int anzahlPassagiere;
-        List<Person> person = new List<Person>();
+        private int anzahlSitze;
+        List<Person> passagiere = new List<Person>();
 
         public Auto()
         {
 
         }
-        public Auto(double pFahrzeuggewicht)
+        public Auto(double pFahrzeuggewicht, int pAnzahlSitze)
         {
+            anzahlSitze = pAnzahlSitze;
             fahrzeuggewicht = pFahrzeuggewicht;
             gesamtgewicht = fahrzeuggewicht;
         }
 
-        public double GetGesamtgewicht(double pFahrzeuggewicht, Person pPerson)
+        public double GetGesamtgewicht(double pFahrzeuggewicht, List<Person> pPerson)
         {
-            gesamtgewicht = pFahrzeuggewicht + pPerson.GetGewicht();
+            gesamtgewicht = pFahrzeuggewicht;
+
+            foreach(var person in pPerson)
+            {
+                gesamtgewicht += person.GetGewicht();
+            }
+        
             return gesamtgewicht;
         }
 
         public void Einsteigen(Person pPerson)
         {
-            person.Add(pPerson);
+            if (passagiere.Count < anzahlSitze)
+            {
+                passagiere.Add(pPerson);
+            }
         }
 
-        public void Aussteigen(Person pPerson)
+        public void Aussteigen(int pPerson)
         {
-            person.Remove(pPerson);
+            if (passagiere.Count > 0)
+            {
+                passagiere.RemoveAt(pPerson);
+            }
         }
 
 
-        public int GetAnzahl()
+        public int GetAnzahlPassagiere()
         {
+            anzahlPassagiere = passagiere.Count;
             return anzahlPassagiere;
+        }
+
+        public int GetAnzahlSitze()
+        {
+            return anzahlSitze;
+        }
+
+        public double GetFahrzeuggewicht()
+        {
+            return fahrzeuggewicht;
+        }
+
+        public List<Person> GetPassagiere()
+        {
+            return passagiere;
         }
     }
 }

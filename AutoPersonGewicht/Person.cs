@@ -9,6 +9,10 @@ namespace AutoPersonGewicht
     {
         private double gewicht;
 
+        public Person()
+        {
+            
+        }
         public Person(double pGewicht)
         {
             gewicht = pGewicht;
