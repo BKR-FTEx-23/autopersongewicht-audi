@@ -27,7 +27,7 @@ namespace AutoPersonGewicht
                 myCar.Einsteigen(person1);
                 txtAusgabe.Text = $"Maximale Sitzplätze : {myCar.GetAnzahlSitze()} \r\n";
                 txtAusgabe.Text += $"Anzahl Passagiere : {myCar.GetAnzahlPassagiere()} \r\n";
-                txtAusgabe.Text += $"Gesamtgewicht : {myCar.GetGesamtgewicht(myCar.GetFahrzeuggewicht(), myCar.GetPassagiere())} \r\n";
+                txtAusgabe.Text += $"Gesamtgewicht : {myCar.Gesamtgewicht} \r\n";
             }
             
         }
@@ -39,7 +39,7 @@ namespace AutoPersonGewicht
                 myCar.Aussteigen(myCar.GetPassagiere().Count-1);
                 txtAusgabe.Text = $"Maximale Sitzplätze : {myCar.GetAnzahlSitze()} \r\n";
                 txtAusgabe.Text += $"Anzahl Passagiere : {myCar.GetAnzahlPassagiere()} \r\n";
-                txtAusgabe.Text += $"Gesamtgewicht : {myCar.GetGesamtgewicht(myCar.GetFahrzeuggewicht(), myCar.GetPassagiere())}\r\n";
+                txtAusgabe.Text += $"Gesamtgewicht : {myCar.Gesamtgewicht}\r\n";
             }
         }
     }

@@ -24,17 +24,33 @@ namespace AutoPersonGewicht
             gesamtgewicht = fahrzeuggewicht;
         }
 
-        public double GetGesamtgewicht(double pFahrzeuggewicht, List<Person> pPerson)
+        public double Gesamtgewicht
         {
-            gesamtgewicht = pFahrzeuggewicht;
-
-            foreach(var person in pPerson)
+            get
             {
-                gesamtgewicht += person.GetGewicht();
+                gesamtgewicht = fahrzeuggewicht;
+
+                foreach(var person in passagiere)
+                {
+                    gesamtgewicht += person.Gewicht;
+                }
+                return gesamtgewicht;
             }
-        
-            return gesamtgewicht;
         }
+
+        //public double GetGesamtgewicht(double pFahrzeuggewicht, List<Person> pPerson)
+        //{
+        //    gesamtgewicht = pFahrzeuggewicht;
+
+        //    foreach (var person in pPerson)
+        //    {
+        //        gesamtgewicht += person.Gewicht;
+        //    }
+
+        //    return gesamtgewicht;
+        //}
+
+
 
         public void Einsteigen(Person pPerson)
         {
