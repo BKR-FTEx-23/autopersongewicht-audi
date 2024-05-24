@@ -26,18 +26,26 @@ classDiagram
 ```
 ## Auto.cs
 ### Attribute
-gesamtgewicht: Ein privates Feld vom Typ double, das das Gesamtgewicht des Autos speichert (Fahrzeuggewicht plus das Gewicht aller Passagiere).
+gesamtgewicht: Ein privates Feld vom Typ double, das das Gesamtgewicht des Autos speichert (Fahrzeuggewicht plus das Gewicht aller Passagiere). 
+
 fahrzeuggewicht: Ein privates Feld vom Typ double, das das Gewicht des Fahrzeugs ohne Passagiere speichert.
+
 anzahlPassagiere: Ein privates Feld vom Typ int, das die Anzahl der Passagiere im Auto speichert.
+
 person: Eine private Liste vom Typ List<Person>, die alle Passagiere speichert, die sich im Auto befinden.
 ### Konstruktoren
 Auto(): Ein parameterloser Konstruktor, der ein Auto-Objekt erstellt.
+
 Auto(double pFahrzeuggewicht): Ein Konstruktor, der das Fahrzeuggewicht als Parameter akzeptiert und das Gesamtgewicht auf das Fahrzeuggewicht setzt.
 ### Methoden
 double GetGesamtgewicht(double pFahrzeuggewicht, Person pPerson): Diese Methode berechnet das Gesamtgewicht des Autos, indem sie das Fahrzeuggewicht und das Gewicht einer angegebenen Person addiert. Sie gibt das berechnete Gesamtgewicht zurück.
+
 void Einsteigen(Person pPerson): Diese Methode fügt eine Person zur Liste der Passagiere hinzu.
+
 void Aussteigen(Person pPerson): Diese Methode entfernt eine Person aus der Liste der Passagiere.
+
 int GetAnzahl(): Diese Methode gibt die Anzahl der Passagiere im Auto zurück.
+
 List<Person> GetPassagiere(): Diese Methode gibt die Liste<Person> Passagiere zurück.
 ### Verwendung
 Die Klasse Auto wird verwendet, um das Gewicht eines Fahrzeugs und die Passagiere zu verwalten. Man kann Passagiere ein- und aussteigen lassen und das Gesamtgewicht des Autos basierend auf dem Gewicht des Fahrzeugs und der Passagiere berechnen.
