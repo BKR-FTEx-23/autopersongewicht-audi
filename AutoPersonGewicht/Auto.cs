@@ -21,7 +21,6 @@ namespace AutoPersonGewicht
         {
             anzahlSitze = pAnzahlSitze;
             fahrzeuggewicht = pFahrzeuggewicht;
-            gesamtgewicht = fahrzeuggewicht;
         }
 
         public double Gesamtgewicht
